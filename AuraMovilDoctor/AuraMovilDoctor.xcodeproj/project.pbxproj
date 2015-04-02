@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CB6BF31ACDDEE100E35659 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */; };
+		16CB6BF51ACDE1CF00E35659 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BF41ACDE1CF00E35659 /* Doctor.swift */; };
 		16F005D11ACD8BB100888573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F005D01ACD8BB100888573 /* AppDelegate.swift */; };
 		16F005D31ACD8BB100888573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F005D21ACD8BB100888573 /* ViewController.swift */; };
 		16F005D61ACD8BB100888573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F005D41ACD8BB100888573 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		16CB6BF41ACDE1CF00E35659 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		16F005CB1ACD8BB100888573 /* AuraMovilDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraMovilDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F005CF1ACD8BB100888573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F005D01ACD8BB100888573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +81,10 @@
 		16F005CD1ACD8BB100888573 /* AuraMovilDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				16CB6BF41ACDE1CF00E35659 /* Doctor.swift */,
 				16F005D01ACD8BB100888573 /* AppDelegate.swift */,
 				16F005D21ACD8BB100888573 /* ViewController.swift */,
+				16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */,
 				16F005D41ACD8BB100888573 /* Main.storyboard */,
 				16F005D71ACD8BB100888573 /* Images.xcassets */,
 				16F005D91ACD8BB100888573 /* LaunchScreen.xib */,
@@ -214,6 +220,8 @@
 			files = (
 				16F005D31ACD8BB100888573 /* ViewController.swift in Sources */,
 				16F005D11ACD8BB100888573 /* AppDelegate.swift in Sources */,
+				16CB6BF51ACDE1CF00E35659 /* Doctor.swift in Sources */,
+				16CB6BF31ACDDEE100E35659 /* DoctorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				16F005EC1ACD8BB100888573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16F005ED1ACD8BB100888573 /* Build configuration list for PBXNativeTarget "AuraMovilDoctorTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				16F005EF1ACD8BB100888573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
