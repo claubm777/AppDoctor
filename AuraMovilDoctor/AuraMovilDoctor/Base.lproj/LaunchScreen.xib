@@ -23,7 +23,7 @@
             <color key="backgroundColor" red="0.090196078431372548" green="0.098039215686274508" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="558" y="256"/>
+            <point key="canvasLocation" x="562" y="253"/>
         </view>
     </objects>
     <resources>
