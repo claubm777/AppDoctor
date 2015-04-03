@@ -97,6 +97,13 @@ class ShowResultsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func seeStatistics(sender: AnyObject) {
+        if patient != nil {
+            if episodes != nil {
+                performSegueWithIdentifier("seeStatistics", sender: sender)
+            }
+        }
+    }
    
     @IBAction func showDetailsEp(sender: AnyObject) {
         if patient != nil {
@@ -119,6 +126,14 @@ class ShowResultsController: UIViewController {
                     let episodeDetailsViewController = segue.destinationViewController as EpisodeDetailViewController
                     episodeDetailsViewController.patient = patient
                     episodeDetailsViewController.episode = episode
+                    
+                    
+                }
+                
+                else if segue.identifier == "seeStatistics" {
+                    
+                    
+                    
                     
                 }
             }
