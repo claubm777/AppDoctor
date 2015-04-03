@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		16CB6BF31ACDDEE100E35659 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */; };
 		16CB6BF51ACDE1CF00E35659 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BF41ACDE1CF00E35659 /* Doctor.swift */; };
+		16CB6BF71ACE3BED00E35659 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BF61ACE3BED00E35659 /* Patient.swift */; };
+		16CB6BFB1ACE3D0900E35659 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BFA1ACE3D0900E35659 /* PatientViewController.swift */; };
+		16CB6BFD1ACE3E1300E35659 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BFC1ACE3E1300E35659 /* Episode.swift */; };
+		16CB6BFF1ACE3E3D00E35659 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6BFE1ACE3E3D00E35659 /* Symptom.swift */; };
+		16CB6C011ACE3EA300E35659 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C001ACE3EA300E35659 /* Food.swift */; };
+		16CB6C031ACE3F0B00E35659 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C021ACE3F0B00E35659 /* Medicine.swift */; };
+		16CB6C051ACE3FF000E35659 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C041ACE3FF000E35659 /* Sport.swift */; };
+		16CB6C071ACE451100E35659 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C061ACE451100E35659 /* SearchController.swift */; };
+		16CB6C091ACE455700E35659 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C081ACE455700E35659 /* EpisodeDetailViewController.swift */; };
+		16CB6C0B1ACE5D6A00E35659 /* ShowSymptomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C0A1ACE5D6A00E35659 /* ShowSymptomController.swift */; };
+		16CB6C0D1ACE5D9E00E35659 /* ShowSportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C0C1ACE5D9E00E35659 /* ShowSportsController.swift */; };
+		16CB6C0F1ACE5DBF00E35659 /* ShowFoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C0E1ACE5DBF00E35659 /* ShowFoodController.swift */; };
+		16CB6C111ACE5DE200E35659 /* ShowMedicinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C101ACE5DE200E35659 /* ShowMedicinesViewController.swift */; };
+		16CB6C131ACE6B2200E35659 /* ShowResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB6C121ACE6B2200E35659 /* ShowResultsController.swift */; };
 		16F005D11ACD8BB100888573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F005D01ACD8BB100888573 /* AppDelegate.swift */; };
 		16F005D31ACD8BB100888573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F005D21ACD8BB100888573 /* ViewController.swift */; };
 		16F005D61ACD8BB100888573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F005D41ACD8BB100888573 /* Main.storyboard */; };
@@ -30,6 +44,20 @@
 /* Begin PBXFileReference section */
 		16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		16CB6BF41ACDE1CF00E35659 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		16CB6BF61ACE3BED00E35659 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		16CB6BFA1ACE3D0900E35659 /* PatientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
+		16CB6BFC1ACE3E1300E35659 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		16CB6BFE1ACE3E3D00E35659 /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		16CB6C001ACE3EA300E35659 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		16CB6C021ACE3F0B00E35659 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		16CB6C041ACE3FF000E35659 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		16CB6C061ACE451100E35659 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		16CB6C081ACE455700E35659 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		16CB6C0A1ACE5D6A00E35659 /* ShowSymptomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSymptomController.swift; sourceTree = "<group>"; };
+		16CB6C0C1ACE5D9E00E35659 /* ShowSportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSportsController.swift; sourceTree = "<group>"; };
+		16CB6C0E1ACE5DBF00E35659 /* ShowFoodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFoodController.swift; sourceTree = "<group>"; };
+		16CB6C101ACE5DE200E35659 /* ShowMedicinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMedicinesViewController.swift; sourceTree = "<group>"; };
+		16CB6C121ACE6B2200E35659 /* ShowResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowResultsController.swift; sourceTree = "<group>"; };
 		16F005CB1ACD8BB100888573 /* AuraMovilDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraMovilDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F005CF1ACD8BB100888573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F005D01ACD8BB100888573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,10 +109,24 @@
 		16F005CD1ACD8BB100888573 /* AuraMovilDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				16CB6BF61ACE3BED00E35659 /* Patient.swift */,
+				16CB6C021ACE3F0B00E35659 /* Medicine.swift */,
+				16CB6C041ACE3FF000E35659 /* Sport.swift */,
+				16CB6BFE1ACE3E3D00E35659 /* Symptom.swift */,
+				16CB6C001ACE3EA300E35659 /* Food.swift */,
+				16CB6BFC1ACE3E1300E35659 /* Episode.swift */,
 				16CB6BF41ACDE1CF00E35659 /* Doctor.swift */,
 				16F005D01ACD8BB100888573 /* AppDelegate.swift */,
 				16F005D21ACD8BB100888573 /* ViewController.swift */,
 				16CB6BF21ACDDEE100E35659 /* DoctorViewController.swift */,
+				16CB6C061ACE451100E35659 /* SearchController.swift */,
+				16CB6C081ACE455700E35659 /* EpisodeDetailViewController.swift */,
+				16CB6BFA1ACE3D0900E35659 /* PatientViewController.swift */,
+				16CB6C0A1ACE5D6A00E35659 /* ShowSymptomController.swift */,
+				16CB6C0C1ACE5D9E00E35659 /* ShowSportsController.swift */,
+				16CB6C0E1ACE5DBF00E35659 /* ShowFoodController.swift */,
+				16CB6C101ACE5DE200E35659 /* ShowMedicinesViewController.swift */,
+				16CB6C121ACE6B2200E35659 /* ShowResultsController.swift */,
 				16F005D41ACD8BB100888573 /* Main.storyboard */,
 				16F005D71ACD8BB100888573 /* Images.xcassets */,
 				16F005D91ACD8BB100888573 /* LaunchScreen.xib */,
@@ -218,10 +260,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CB6C0F1ACE5DBF00E35659 /* ShowFoodController.swift in Sources */,
 				16F005D31ACD8BB100888573 /* ViewController.swift in Sources */,
+				16CB6C091ACE455700E35659 /* EpisodeDetailViewController.swift in Sources */,
+				16CB6C051ACE3FF000E35659 /* Sport.swift in Sources */,
+				16CB6BFF1ACE3E3D00E35659 /* Symptom.swift in Sources */,
 				16F005D11ACD8BB100888573 /* AppDelegate.swift in Sources */,
+				16CB6BFD1ACE3E1300E35659 /* Episode.swift in Sources */,
+				16CB6BFB1ACE3D0900E35659 /* PatientViewController.swift in Sources */,
+				16CB6C011ACE3EA300E35659 /* Food.swift in Sources */,
+				16CB6C071ACE451100E35659 /* SearchController.swift in Sources */,
 				16CB6BF51ACDE1CF00E35659 /* Doctor.swift in Sources */,
+				16CB6C0B1ACE5D6A00E35659 /* ShowSymptomController.swift in Sources */,
+				16CB6C031ACE3F0B00E35659 /* Medicine.swift in Sources */,
+				16CB6C0D1ACE5D9E00E35659 /* ShowSportsController.swift in Sources */,
 				16CB6BF31ACDDEE100E35659 /* DoctorViewController.swift in Sources */,
+				16CB6C111ACE5DE200E35659 /* ShowMedicinesViewController.swift in Sources */,
+				16CB6BF71ACE3BED00E35659 /* Patient.swift in Sources */,
+				16CB6C131ACE6B2200E35659 /* ShowResultsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

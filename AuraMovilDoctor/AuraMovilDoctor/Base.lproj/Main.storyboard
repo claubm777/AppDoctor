@@ -102,6 +102,9 @@
                                     <color key="titleColor" red="0.43522969379999998" green="0.6945038362" blue="0.91141887629999996" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ZHb-rI-fZ2" kind="push" identifier="getPatient" id="ZLb-A6-mfd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search a patient by ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5US-Iw-yHn">
                                 <rect key="frame" x="73" y="428" width="172" height="21"/>
@@ -126,16 +129,17 @@
                         <outlet property="disciplineLabel" destination="vSd-aM-CXY" id="QjI-3f-HFu"/>
                         <outlet property="doctorNameLabel" destination="TQ3-4y-h3L" id="oNN-RW-qYZ"/>
                         <outlet property="mailLabel" destination="cdh-8l-Pgs" id="4xv-gw-oV2"/>
+                        <outlet property="textID" destination="4qd-Di-iZ6" id="mt9-1F-85b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzG-wA-y77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="395"/>
         </scene>
-        <!--View Controller-->
+        <!--Patient View Controller-->
         <scene sceneID="gzd-H9-YDj">
             <objects>
-                <viewController id="ZHb-rI-fZ2" sceneMemberID="viewController">
+                <viewController id="ZHb-rI-fZ2" customClass="PatientViewController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nqT-9w-g13"/>
                         <viewControllerLayoutGuide type="bottom" id="i9Q-pm-EQ6"/>
@@ -171,40 +175,45 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.63" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-ga-xSM">
-                                <rect key="frame" x="28" y="358" width="64" height="25"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-ga-xSM">
+                                <rect key="frame" x="28" y="358" width="267" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.88001277269387224" blue="1" alpha="0.41000000000000003" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showEp:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="DPP-7H-Ni0"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJu-mt-Y8e">
-                                <rect key="frame" x="28" y="382" width="64" height="22"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJu-mt-Y8e">
+                                <rect key="frame" x="28" y="382" width="267" height="22"/>
                                 <state key="normal" title="Episode2">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showEp:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="vUo-sm-BeL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cw9-fq-hDY">
-                                <rect key="frame" x="28" y="406" width="64" height="23"/>
-                                <state key="normal" title="Episode3">
-                                    <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFE-o1-SPS">
-                                <rect key="frame" x="28" y="432" width="64" height="23"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFE-o1-SPS">
+                                <rect key="frame" x="28" y="432" width="267" height="23"/>
                                 <state key="normal" title="Episode4">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showEp:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="NeH-pK-zyo"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-20-Yxg">
-                                <rect key="frame" x="28" y="457" width="64" height="21"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-20-Yxg">
+                                <rect key="frame" x="28" y="457" width="267" height="21"/>
                                 <state key="normal" title="Episode5">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showEp:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="Q6F-4G-u0a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHi-nH-VyR">
                                 <rect key="frame" x="84" y="505" width="152" height="25"/>
@@ -214,10 +223,36 @@
                                     <color key="titleColor" red="0.43522969379999998" green="0.6945038362" blue="0.91141887629999996" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="SearchBDates:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="1EP-4n-oww"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cw9-fq-hDY">
+                                <rect key="frame" x="28" y="406" width="267" height="23"/>
+                                <state key="normal" title="Episode3">
+                                    <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showEp:" destination="ZHb-rI-fZ2" eventType="touchUpInside" id="UWW-NT-G7A"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OkW-mS-WXY"/>
+                    <connections>
+                        <outlet property="cedulalabel" destination="Q2e-dT-gc5" id="lmZ-kQ-of9"/>
+                        <outlet property="labelEpisodio1" destination="jFJ-ga-xSM" id="rMd-mM-PKf"/>
+                        <outlet property="labelEpisodio2" destination="jJu-mt-Y8e" id="bJ2-oq-Gfa"/>
+                        <outlet property="labelEpisodio3" destination="cw9-fq-hDY" id="kqI-8R-690"/>
+                        <outlet property="labelEpisodio4" destination="tFE-o1-SPS" id="Y86-OV-XEn"/>
+                        <outlet property="labelEpisodio5" destination="PUq-20-Yxg" id="kV8-MW-oGw"/>
+                        <outlet property="maillabel" destination="9EA-F0-lPN" id="2ec-Rl-cEk"/>
+                        <outlet property="patientNameLabel" destination="Z6F-hT-Cp1" id="Jka-Hv-OMw"/>
+                        <segue destination="Poc-Uh-FT5" kind="push" identifier="searchBetweenDates" id="GcK-ZC-cCq"/>
+                        <segue destination="pX3-p5-t5C" kind="push" identifier="showEpisodeDetails" id="LCq-wW-gMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfL-fK-K7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,10 +401,10 @@
             </objects>
             <point key="canvasLocation" x="2415" y="1041"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Food Controller-->
         <scene sceneID="emQ-Z3-Qkb">
             <objects>
-                <viewController id="EP4-54-Jcy" sceneMemberID="viewController">
+                <viewController id="EP4-54-Jcy" customClass="ShowFoodController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDQ-Lb-4Ax"/>
                         <viewControllerLayoutGuide type="bottom" id="e7u-xE-OQw"/>
@@ -468,15 +503,30 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EtD-3a-mEL"/>
+                    <connections>
+                        <outlet property="dateLab" destination="ZRN-XY-P1P" id="1dI-so-kfW"/>
+                        <outlet property="episodelab" destination="qif-zX-V0D" id="vOM-X0-C2G"/>
+                        <outlet property="foodLabe1" destination="tUd-gi-MW4" id="4hW-sh-wBP"/>
+                        <outlet property="foodLabe2" destination="Nk1-gl-bZd" id="zDZ-3f-4Ic"/>
+                        <outlet property="foodLabe3" destination="mrs-dS-chp" id="oDo-9s-rw5"/>
+                        <outlet property="foodLabe4" destination="IQE-mX-NYn" id="Tth-oi-zSj"/>
+                        <outlet property="foodLabe5" destination="nfD-6g-IRc" id="DRy-2s-r5t"/>
+                        <outlet property="foodQuantit1" destination="moh-dd-8MY" id="8dZ-5m-epm"/>
+                        <outlet property="foodQuantit2" destination="xbP-lI-UUh" id="LeJ-3q-oBt"/>
+                        <outlet property="foodQuantit3" destination="X4N-iL-c5f" id="4bb-XM-8ga"/>
+                        <outlet property="foodQuantit4" destination="mL6-l2-1xR" id="Isd-j4-HCS"/>
+                        <outlet property="foodQuantit5" destination="WZm-mb-W44" id="aFY-6g-x6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qE0-YS-0A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="1698"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Medicines View Controller-->
         <scene sceneID="0aM-bH-FIa">
             <objects>
-                <viewController id="hnD-8m-ScT" sceneMemberID="viewController">
+                <viewController id="hnD-8m-ScT" customClass="ShowMedicinesViewController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v4T-CG-CLG"/>
                         <viewControllerLayoutGuide type="bottom" id="H4O-7U-9aE"/>
@@ -548,12 +598,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-rc-LvK">
-                                <rect key="frame" x="240" y="429" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RD-Km-Oi7">
                                 <rect key="frame" x="240" y="458" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -572,18 +616,38 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqe-rc-LvK">
+                                <rect key="frame" x="240" y="429" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YCU-lS-G3s"/>
+                    <connections>
+                        <outlet property="episodeLabe" destination="8Aq-Wn-yPX" id="6Vb-eX-olE"/>
+                        <outlet property="medicineLabe1" destination="lTe-3K-7nP" id="Qlm-fd-ciH"/>
+                        <outlet property="medicineLabe2" destination="W4O-aF-fcF" id="0SI-em-DqL"/>
+                        <outlet property="medicineLabe3" destination="pd5-2h-OLa" id="n9f-tH-ihu"/>
+                        <outlet property="medicineLabe4" destination="wm9-YR-cO9" id="8Gn-4y-x3F"/>
+                        <outlet property="medicineLabe5" destination="XQ4-3X-Xw3" id="HJf-H3-j0m"/>
+                        <outlet property="medicineQuantit1" destination="dNN-ql-o4m" id="5Gz-RI-oDp"/>
+                        <outlet property="medicineQuantit2" destination="yje-gF-Eqa" id="zmz-vp-vB3"/>
+                        <outlet property="medicineQuantit3" destination="Hqe-rc-LvK" id="yj9-iO-Kyz"/>
+                        <outlet property="medicineQuantit4" destination="0RD-Km-Oi7" id="QGK-zG-BbV"/>
+                        <outlet property="medicineQuantit5" destination="xKl-KJ-ZeF" id="IHV-w3-wSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns2-4G-yJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="1694"/>
+            <point key="canvasLocation" x="625" y="1770"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Symptom Controller-->
         <scene sceneID="IdK-FR-PnH">
             <objects>
-                <viewController id="fYd-8f-KTR" sceneMemberID="viewController">
+                <viewController id="fYd-8f-KTR" customClass="ShowSymptomController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cC8-dZ-K5G"/>
                         <viewControllerLayoutGuide type="bottom" id="z0S-72-ceG"/>
@@ -646,15 +710,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UXu-Oh-jrY"/>
+                    <connections>
+                        <outlet property="labelEpisod" destination="Vrd-6s-XnC" id="kI1-c0-3Y5"/>
+                        <outlet property="labelSympto1" destination="cI4-Sr-4x6" id="b39-qi-tkq"/>
+                        <outlet property="labelSympto2" destination="wFj-C9-lUG" id="2Dq-dA-k9b"/>
+                        <outlet property="labelSympto3" destination="gfb-e1-0vW" id="cRf-iI-4F5"/>
+                        <outlet property="labelSympto4" destination="3kM-zP-e6h" id="iVb-xl-c4b"/>
+                        <outlet property="labelSympto5" destination="XYs-Oz-zOV" id="aBI-aK-o5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDq-lL-2gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="1692"/>
+            <point key="canvasLocation" x="1043" y="1791"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Sports Controller-->
         <scene sceneID="YrT-K2-lSJ">
             <objects>
-                <viewController id="5af-TN-UeQ" sceneMemberID="viewController">
+                <viewController id="5af-TN-UeQ" customClass="ShowSportsController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r6o-PD-Lbc"/>
                         <viewControllerLayoutGuide type="bottom" id="Kf9-5f-YVE"/>
@@ -753,15 +826,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FMZ-Tj-WG7"/>
+                    <connections>
+                        <outlet property="episodeLabe" destination="5JX-xx-bMX" id="mOw-lT-BJc"/>
+                        <outlet property="labelClimat1" destination="ESl-0r-t6q" id="ovl-Dg-iN1"/>
+                        <outlet property="labelClimat2" destination="feT-KJ-5uh" id="sAj-64-H1X"/>
+                        <outlet property="labelDescriptio1" destination="9Ef-rd-esT" id="rLX-zF-ObT"/>
+                        <outlet property="labelDescriptio2" destination="nsX-FT-Pns" id="ABY-JU-3JG"/>
+                        <outlet property="labelHydratio1" destination="xyv-Rb-g1X" id="SPb-Wd-lNc"/>
+                        <outlet property="labelHydratio2" destination="3o9-sd-ki8" id="fTf-PJ-TAw"/>
+                        <outlet property="labelIntensit1" destination="DyH-br-lDJ" id="Ew9-31-hLD"/>
+                        <outlet property="labelIntensit2" destination="a95-Ul-VbS" id="96r-Ln-WKm"/>
+                        <outlet property="labelPlac1" destination="Hge-oi-1wy" id="lRp-CP-Ytz"/>
+                        <outlet property="labelPlac2" destination="KjC-nn-Pp1" id="FpF-94-GK7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrY-UO-Nfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="1690"/>
+            <point key="canvasLocation" x="1460" y="1813"/>
         </scene>
-        <!--View Controller-->
+        <!--Episode Detail View Controller-->
         <scene sceneID="Pdj-fE-s8q">
             <objects>
-                <viewController id="pX3-p5-t5C" sceneMemberID="viewController">
+                <viewController id="pX3-p5-t5C" customClass="EpisodeDetailViewController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Cq-kx-8SG"/>
                         <viewControllerLayoutGuide type="bottom" id="i4v-8t-rFf"/>
@@ -773,12 +860,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pantallaInicio" translatesAutoresizingMaskIntoConstraints="NO" id="au0-yq-rRc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre de la persona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6c-b3-L0L">
-                                <rect key="frame" x="16" y="218" width="288" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cedula" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-Oq-4Ws">
                                 <rect key="frame" x="26" y="267" width="266" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -859,6 +940,9 @@
                                     <color key="titleColor" red="0.17839853692121052" green="0.43942476404862829" blue="0.91141887629999996" alpha="0.47000000000000003" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showSp:" destination="pX3-p5-t5C" eventType="touchUpInside" id="0Bc-B3-ZQR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mer-Fa-eoM">
                                 <rect key="frame" x="173" y="492" width="115" height="25"/>
@@ -868,6 +952,9 @@
                                     <color key="titleColor" red="0.43522969379999998" green="0.6945038362" blue="0.91141887629999996" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showF:" destination="pX3-p5-t5C" eventType="touchUpInside" id="jQc-PR-teB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-z6-DoB">
                                 <rect key="frame" x="32" y="525" width="115" height="25"/>
@@ -877,6 +964,9 @@
                                     <color key="titleColor" red="0.1036023551539277" green="0.55667686398192362" blue="0.87056107958282825" alpha="0.31" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showSymp:" destination="pX3-p5-t5C" eventType="touchUpInside" id="Enz-kd-1am"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epr-Gu-2NW">
                                 <rect key="frame" x="173" y="525" width="115" height="25"/>
@@ -886,19 +976,43 @@
                                     <color key="titleColor" red="0.0" green="0.78273952426004734" blue="0.91141887629999996" alpha="0.20999999999999999" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showMed:" destination="pX3-p5-t5C" eventType="touchUpInside" id="292-T9-DgJ"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre de la persona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6c-b3-L0L">
+                                <rect key="frame" x="18" y="218" width="288" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Azl-i1-W02"/>
+                    <connections>
+                        <outlet property="dateLabe" destination="NHr-qD-YUy" id="ZWC-Jd-eqz"/>
+                        <outlet property="patientNameI" destination="gkn-Oq-4Ws" id="8RM-KW-1oj"/>
+                        <outlet property="patientNameLabe" destination="P6c-b3-L0L" id="oYA-lb-NCJ"/>
+                        <outlet property="placeLabe" destination="Jlg-sR-9nj" id="4W7-t8-EQJ"/>
+                        <outlet property="sleepingCycleLabe" destination="m9j-Oz-sYM" id="oEY-iG-QEB"/>
+                        <outlet property="strengthLabe" destination="Eok-f4-SoE" id="0yg-tK-AGm"/>
+                        <outlet property="stressLabe" destination="GYN-oe-6ah" id="3w9-Cm-RLv"/>
+                        <outlet property="timeSleptLabe" destination="aVA-jw-BTf" id="VI2-3H-JFa"/>
+                        <segue destination="hnD-8m-ScT" kind="push" identifier="showMedicines" id="rUM-Ef-NHA"/>
+                        <segue destination="fYd-8f-KTR" kind="push" identifier="showSymptoms" id="ghn-Ag-5nW"/>
+                        <segue destination="5af-TN-UeQ" kind="push" identifier="showSports" id="anb-ch-gmz"/>
+                        <segue destination="EP4-54-Jcy" kind="push" identifier="showFoods" id="VsF-HK-yvG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkP-xE-QRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="808" y="1049"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Results Controller-->
         <scene sceneID="ZcU-X0-Ljz">
             <objects>
-                <viewController id="72k-XX-yJ9" sceneMemberID="viewController">
+                <viewController id="72k-XX-yJ9" customClass="ShowResultsController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3KF-EZ-hMN"/>
                         <viewControllerLayoutGuide type="bottom" id="zsJ-pa-iGR"/>
@@ -916,75 +1030,95 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-ES-yS4">
-                                <rect key="frame" x="26" y="276" width="64" height="25"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ly-ES-yS4">
+                                <rect key="frame" x="26" y="276" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="Jvn-SF-EDg"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-wH-JYJ">
-                                <rect key="frame" x="26" y="296" width="64" height="25"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-wH-JYJ">
+                                <rect key="frame" x="26" y="296" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="AEi-rO-U8w"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-v0-aBq">
-                                <rect key="frame" x="26" y="339" width="64" height="25"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-v0-aBq">
+                                <rect key="frame" x="26" y="339" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="byv-2M-IQz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-Hu-xSy">
-                                <rect key="frame" x="26" y="317" width="64" height="25"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-Hu-xSy">
+                                <rect key="frame" x="26" y="317" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="IWr-Sq-NXM"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-vd-Dm3">
-                                <rect key="frame" x="26" y="362" width="64" height="25"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-vd-Dm3">
+                                <rect key="frame" x="26" y="362" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="XTr-N5-2SU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-ds-whw">
-                                <rect key="frame" x="26" y="382" width="64" height="25"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-ds-whw">
+                                <rect key="frame" x="26" y="382" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="4DH-cu-lkD"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdS-1o-oId">
-                                <rect key="frame" x="26" y="402" width="64" height="25"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdS-1o-oId">
+                                <rect key="frame" x="26" y="402" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="FMb-ma-Bcj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWh-9P-e9y">
-                                <rect key="frame" x="26" y="422" width="64" height="25"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWh-9P-e9y">
+                                <rect key="frame" x="26" y="422" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="Qsd-80-U37"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HR4-im-xQF">
-                                <rect key="frame" x="26" y="465" width="64" height="25"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuM-X6-tWR">
+                                <rect key="frame" x="26" y="443" width="271" height="25"/>
                                 <state key="normal" title="Episode1">
                                     <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuM-X6-tWR">
-                                <rect key="frame" x="26" y="443" width="64" height="25"/>
-                                <state key="normal" title="Episode1">
-                                    <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="Fr5-kp-j45"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjX-9C-jUp">
                                 <rect key="frame" x="83" y="515" width="152" height="25"/>
@@ -995,18 +1129,42 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HR4-im-xQF">
+                                <rect key="frame" x="26" y="465" width="271" height="25"/>
+                                <state key="normal" title="Episode1">
+                                    <color key="titleColor" red="0.0" green="0.8800127727" blue="1" alpha="0.40999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDetailsEp:" destination="72k-XX-yJ9" eventType="touchUpInside" id="jgY-U9-72f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZOy-Hq-kcg"/>
+                    <connections>
+                        <outlet property="buttonEpisod1" destination="1Ly-ES-yS4" id="tgt-Ec-oun"/>
+                        <outlet property="buttonEpisod10" destination="HR4-im-xQF" id="yHb-gd-mDA"/>
+                        <outlet property="buttonEpisod2" destination="sOl-wH-JYJ" id="uCg-b5-qC1"/>
+                        <outlet property="buttonEpisod3" destination="g0C-Hu-xSy" id="jcL-Lx-qmj"/>
+                        <outlet property="buttonEpisod4" destination="qnN-v0-aBq" id="ThH-Xa-VXc"/>
+                        <outlet property="buttonEpisod5" destination="0AQ-vd-Dm3" id="gP7-rF-WJn"/>
+                        <outlet property="buttonEpisod6" destination="HRg-ds-whw" id="v0v-X1-RND"/>
+                        <outlet property="buttonEpisod7" destination="YdS-1o-oId" id="GPx-Sp-VUW"/>
+                        <outlet property="buttonEpisod8" destination="OWh-9P-e9y" id="GO7-Fj-YU0"/>
+                        <outlet property="buttonEpisod9" destination="fuM-X6-tWR" id="zhG-bY-Iai"/>
+                        <segue destination="pX3-p5-t5C" kind="push" identifier="showEpisodeDetails" id="g6H-Z5-kvX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4P5-I5-NR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="1049"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Controller-->
         <scene sceneID="bs7-ck-Fiw">
             <objects>
-                <viewController id="Poc-Uh-FT5" sceneMemberID="viewController">
+                <viewController id="Poc-Uh-FT5" customClass="SearchController" customModule="AuraMovilDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0q8-ka-kGM"/>
                         <viewControllerLayoutGuide type="bottom" id="qiU-ve-ZMJ"/>
@@ -1042,6 +1200,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fecha2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pg-ZG-Sc9">
                                 <rect key="frame" x="16" y="331" width="288" height="21"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1057,14 +1216,33 @@
                                     <color key="titleColor" red="0.43522969379999998" green="0.6945038362" blue="0.91141887629999996" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="busqueda:" destination="Poc-Uh-FT5" eventType="touchUpInside" id="BkA-79-gYn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Qp8-GO-xcx" appends="YES" id="8DU-Ru-2t6"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="eTT-ui-jQT"/>
+                    <connections>
+                        <outlet property="datePi" destination="z7A-Pz-Ylj" id="u1C-e6-z6l"/>
+                        <outlet property="firstDateLabe" destination="aky-8B-HdS" id="le4-98-sMQ"/>
+                        <outlet property="secondDateLabe" destination="6Pg-ZG-Sc9" id="TOa-aH-aU6"/>
+                        <segue destination="72k-XX-yJ9" kind="push" identifier="showResults" id="iPT-IS-E5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJG-2y-zhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Qp8-GO-xcx">
+                    <connections>
+                        <action selector="secDatePick:" destination="Poc-Uh-FT5" id="rmj-pp-DHF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1641" y="1049"/>
+            <point key="canvasLocation" x="1640" y="1184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j7T-Mk-E72">
@@ -1094,4 +1272,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="g6H-Z5-kvX"/>
+    </inferredMetricsTieBreakers>
 </document>
