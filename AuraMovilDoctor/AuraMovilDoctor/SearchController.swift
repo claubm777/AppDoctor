@@ -19,10 +19,14 @@ class SearchController: UIViewController {
     
     var patient: Patient?
     
+    var doctor: Doctor?
+    
+    var episodes: [Episode]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
-        println("00000000000000000000000000000000000000000000004444")
+
         datePi.addTarget(self, action: Selector("firstDatePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
         
@@ -75,36 +79,60 @@ class SearchController: UIViewController {
         
         if segue.identifier == "showResults" {
             
-            let patientID = patient!.id
-            let firstDate = firstDateLabe!.text
-            let secondDate = secondDateLabe!.text
-            
-            let address = "https://aura-app.herokuapp.com/api/patient/\(patientID)/episode/\(firstDate!)/\(secondDate!)"
-            
-            let patientURL = NSURL(string: address)
-            
-            let dataObject = NSData(contentsOfURL: patientURL!)
-            let episodesArray: NSArray = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSArray
-            
-            println(episodesArray)
-            
-            var episodes: [Episode] = []
-            
-            for episode in episodesArray {
-                let episodeRetrieved = episode as! NSDictionary
-                let newEpisode = Episode(episodeDictionary: episodeRetrieved, patientId: patient!.id)
-                episodes.append(newEpisode)
-            }
-            
             let resultsController = segue.destinationViewController as! ShowResultsController
-            resultsController.episodes = episodes
+            resultsController.episodes = episodes!
             resultsController.patient = patient!
-            
         }
     }
     
     @IBAction func busqueda(sender: AnyObject) {
-        performSegueWithIdentifier("showResults", sender: sender)
+        
+        var err: NSError?
+        
+        let firstDate = firstDateLabe!.text
+        let secondDate = secondDateLabe!.text
+        
+        let baseURL = NSURL(string: "https://aura-app.herokuapp.com/api/patient/\(patient!.id)/episode/\(firstDate!)/\(secondDate!)")
+        
+        let request = NSMutableURLRequest(URL: baseURL!)
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var encriptador: Security = Security()
+        var tokenEncriptado = encriptador.encriptando(doctor!.token)
+        println(tokenEncriptado)
+        
+        request.addValue("\(tokenEncriptado)", forHTTPHeaderField: "auth-token")
+        request.addValue("DOC", forHTTPHeaderField: "who")
+        request.addValue("\(doctor!.id)", forHTTPHeaderField: "id")
+        
+        var response: NSURLResponse?
+        
+        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) as NSData?
+        
+        if let httpResponse = response as? NSHTTPURLResponse {
+            
+            println("error \(httpResponse.statusCode)")
+            
+            let episodesArray: NSArray = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: nil) as! NSArray
+            
+            println(episodesArray)
+            
+            var episodesList: [Episode] = []
+            
+            for episode in episodesArray {
+                let episodeRetrieved = episode as! NSDictionary
+                let newEpisode = Episode(episodeDictionary: episodeRetrieved, patientId: patient!.id)
+                episodesList.append(newEpisode)
+            }
+            
+            self.episodes = episodesList
+            
+            performSegueWithIdentifier("showResults", sender: sender)
+            
+        }
+        
+        
     }
     
     

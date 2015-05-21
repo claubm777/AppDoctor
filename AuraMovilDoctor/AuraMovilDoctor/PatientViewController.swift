@@ -23,6 +23,7 @@ class PatientViewController: UIViewController {
     
     var patient: Patient?
     
+    var doctor: Doctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,12 +102,12 @@ class PatientViewController: UIViewController {
             }
                 
             else if segue.identifier == "searchBetweenDates" {
-                println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+
                 let searchViewController = segue.destinationViewController as! SearchController
                 println(patient!)
                 searchViewController.patient = patient!
-                println(patient!)
-                println("mimimimimimimimimimimimimi")
+                searchViewController.doctor = doctor!
+
             }
             
             
@@ -118,7 +119,7 @@ class PatientViewController: UIViewController {
     @IBAction func SearchBDates(sender: AnyObject) {
         if patient != nil {
             performSegueWithIdentifier("searchBetweenDates", sender: sender)
-            println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
+
         }
     }
     

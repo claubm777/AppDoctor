@@ -87,6 +87,7 @@ class DoctorViewController: UIViewController {
         if segue.identifier == "getPatient" {
             let patientViewController = segue.destinationViewController as! PatientViewController
             patientViewController.patient = patient!
+            patientViewController.doctor = doctor!
             patient!.id = textID.text
         }
     }
