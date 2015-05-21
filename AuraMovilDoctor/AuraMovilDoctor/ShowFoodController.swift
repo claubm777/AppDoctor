@@ -9,12 +9,12 @@
 import UIKit
 
 class ShowFoodController: UIViewController {
-
-   
-   
+    
+    
+    
     
     @IBOutlet weak var episodelab: UILabel!
-   
+    
     @IBOutlet weak var dateLab: UILabel!
     
     @IBOutlet weak var foodLabe1: UILabel!
@@ -100,5 +100,5 @@ class ShowFoodController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }

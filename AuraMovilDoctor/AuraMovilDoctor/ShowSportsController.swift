@@ -9,7 +9,7 @@
 import UIKit
 
 class ShowSportsController: UIViewController {
-
+    
     
     @IBOutlet weak var episodeLabe: UILabel!
     @IBOutlet weak var labelDescriptio1: UILabel!
@@ -86,5 +86,5 @@ class ShowSportsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }

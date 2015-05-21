@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EC3-fi-Ji1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EC3-fi-Ji1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,15 +22,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.63" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYG-oV-nBl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYG-oV-nBl">
                                 <rect key="frame" x="78" y="309" width="165" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQV-JH-ldW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQV-JH-ldW">
                                 <rect key="frame" x="78" y="425" width="165" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQu-D6-ZV9">
                                 <rect key="frame" x="117" y="393" width="86" height="24"/>
@@ -50,7 +50,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zyu-Tx-Q1L" kind="push" identifier="getDoctor" id="YfD-2m-TE6"/>
+                                    <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KSI-3S-adI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,7 +58,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="RLG-ov-vKm"/>
                     <connections>
+                        <outlet property="passwordText" destination="YQV-JH-ldW" id="bDP-ed-zHX"/>
                         <outlet property="textIDtxt" destination="kYG-oV-nBl" id="bpd-78-czy"/>
+                        <segue destination="zyu-Tx-Q1L" kind="push" identifier="getDoctor" id="ria-mb-iAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -103,7 +105,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZHb-rI-fZ2" kind="push" identifier="getPatient" id="ZLb-A6-mfd"/>
+                                    <action selector="search:" destination="zyu-Tx-Q1L" eventType="touchUpInside" id="MI7-bD-yQx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search a patient by ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5US-Iw-yHn">
@@ -130,6 +132,7 @@
                         <outlet property="doctorNameLabel" destination="TQ3-4y-h3L" id="oNN-RW-qYZ"/>
                         <outlet property="mailLabel" destination="cdh-8l-Pgs" id="4xv-gw-oV2"/>
                         <outlet property="textID" destination="4qd-Di-iZ6" id="mt9-1F-85b"/>
+                        <segue destination="ZHb-rI-fZ2" kind="push" identifier="getPatient" id="Ksv-yn-Ls8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzG-wA-y77" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,60 +350,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db9-k9-R3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2037" y="395"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6kE-Hy-fco">
-            <objects>
-                <viewController id="B7u-aE-BEs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y7c-NS-5HB"/>
-                        <viewControllerLayoutGuide type="bottom" id="yxp-kk-Hjh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GAm-mA-Xlt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2r4-Vp-uBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2415" y="396"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Pdr-QV-off">
-            <objects>
-                <viewController id="dma-xk-AMn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n7A-h4-W3B"/>
-                        <viewControllerLayoutGuide type="bottom" id="odl-Rv-utD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ba4-cv-Mqy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fQf-6E-gMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2037" y="1041"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rqx-GX-61T">
-            <objects>
-                <viewController id="I1d-xf-8HU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="o7N-KY-MJ7"/>
-                        <viewControllerLayoutGuide type="bottom" id="TPw-0j-JxD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ei8-Oy-GjT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1051168832" green="0.1258960851" blue="0.24378365460000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xkZ-Dz-UmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2415" y="1041"/>
         </scene>
         <!--Show Food Controller-->
         <scene sceneID="emQ-Z3-Qkb">
@@ -1278,6 +1227,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="g6H-Z5-kvX"/>
+        <segue reference="LCq-wW-gMa"/>
     </inferredMetricsTieBreakers>
 </document>

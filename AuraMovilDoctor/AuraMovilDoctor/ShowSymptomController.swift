@@ -9,8 +9,8 @@
 import UIKit
 
 class ShowSymptomController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var labelSympto1: UILabel!
     @IBOutlet weak var labelSympto2: UILabel!
     @IBOutlet weak var labelSympto3: UILabel!
@@ -68,6 +68,6 @@ class ShowSymptomController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }

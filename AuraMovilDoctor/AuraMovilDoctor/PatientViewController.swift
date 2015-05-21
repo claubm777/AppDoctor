@@ -9,7 +9,7 @@
 import UIKit
 
 class PatientViewController: UIViewController {
-
+    
     
     @IBOutlet weak var labelEpisodio1: UIButton!
     @IBOutlet weak var labelEpisodio2: UIButton!
@@ -94,7 +94,7 @@ class PatientViewController: UIViewController {
                 let episode = episodes[count-index]
                 
                 
-                let episodeDetailsViewController = segue.destinationViewController as EpisodeDetailViewController
+                let episodeDetailsViewController = segue.destinationViewController as! EpisodeDetailViewController
                 episodeDetailsViewController.patient = patient
                 episodeDetailsViewController.episode = episode
                 
@@ -102,14 +102,14 @@ class PatientViewController: UIViewController {
                 
             else if segue.identifier == "searchBetweenDates" {
                 println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-                let searchViewController = segue.destinationViewController as SearchController
+                let searchViewController = segue.destinationViewController as! SearchController
                 println(patient!)
                 searchViewController.patient = patient!
                 println(patient!)
                 println("mimimimimimimimimimimimimi")
             }
-                
-           
+            
+            
         }
         
     }
@@ -132,7 +132,6 @@ class PatientViewController: UIViewController {
     
     
     
-        
     
     
     
@@ -141,6 +140,7 @@ class PatientViewController: UIViewController {
     
     
     
-        
+    
+    
 }
 

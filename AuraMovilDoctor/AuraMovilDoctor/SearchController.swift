@@ -52,8 +52,8 @@ class SearchController: UIViewController {
         secondDateLabe.text = firstDateLabe.text
         datePi.addTarget(self, action: Selector("secondDatePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
-   
-  
+    
+    
     
     func secondDatePickerChanged(datePicker:UIDatePicker) {
         
@@ -84,19 +84,19 @@ class SearchController: UIViewController {
             let patientURL = NSURL(string: address)
             
             let dataObject = NSData(contentsOfURL: patientURL!)
-            let episodesArray: NSArray = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as NSArray
+            let episodesArray: NSArray = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSArray
             
             println(episodesArray)
             
             var episodes: [Episode] = []
             
             for episode in episodesArray {
-                let episodeRetrieved = episode as NSDictionary
+                let episodeRetrieved = episode as! NSDictionary
                 let newEpisode = Episode(episodeDictionary: episodeRetrieved, patientId: patient!.id)
                 episodes.append(newEpisode)
             }
             
-            let resultsController = segue.destinationViewController as ShowResultsController
+            let resultsController = segue.destinationViewController as! ShowResultsController
             resultsController.episodes = episodes
             resultsController.patient = patient!
             
@@ -107,6 +107,6 @@ class SearchController: UIViewController {
         performSegueWithIdentifier("showResults", sender: sender)
     }
     
-
-
+    
+    
 }

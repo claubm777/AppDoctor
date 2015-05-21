@@ -9,7 +9,7 @@
 import UIKit
 
 class ShowResultsController: UIViewController {
-
+    
     @IBOutlet weak var buttonEpisod1: UIButton!
     
     @IBOutlet weak var buttonEpisod2: UIButton!
@@ -104,7 +104,7 @@ class ShowResultsController: UIViewController {
             }
         }
     }
-   
+    
     @IBAction func showDetailsEp(sender: AnyObject) {
         if patient != nil {
             if episodes != nil {
@@ -123,13 +123,13 @@ class ShowResultsController: UIViewController {
                     
                     let episode = episodes![index]
                     
-                    let episodeDetailsViewController = segue.destinationViewController as EpisodeDetailViewController
+                    let episodeDetailsViewController = segue.destinationViewController as! EpisodeDetailViewController
                     episodeDetailsViewController.patient = patient
                     episodeDetailsViewController.episode = episode
                     
                     
                 }
-                
+                    
                 else if segue.identifier == "seeStatistics" {
                     
                     
@@ -139,6 +139,6 @@ class ShowResultsController: UIViewController {
             }
         }
     }
-
-
+    
+    
 }

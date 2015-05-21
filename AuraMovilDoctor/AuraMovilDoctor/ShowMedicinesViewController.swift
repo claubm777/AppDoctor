@@ -9,8 +9,8 @@
 import UIKit
 
 class ShowMedicinesViewController: UIViewController {
-
-  
+    
+    
     
     @IBOutlet weak var episodeLabe: UILabel!
     
@@ -92,5 +92,5 @@ class ShowMedicinesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }

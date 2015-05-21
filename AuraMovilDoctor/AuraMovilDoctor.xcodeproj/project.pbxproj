@@ -30,6 +30,7 @@
 		16F005D81ACD8BB100888573 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F005D71ACD8BB100888573 /* Images.xcassets */; };
 		16F005DB1ACD8BB100888573 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F005D91ACD8BB100888573 /* LaunchScreen.xib */; };
 		16F005E71ACD8BB100888573 /* AuraMovilDoctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F005E61ACD8BB100888573 /* AuraMovilDoctorTests.swift */; };
+		8E136A181B0E416200D3CF4B /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E136A171B0E416200D3CF4B /* Security.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		16F005E01ACD8BB100888573 /* AuraMovilDoctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraMovilDoctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F005E51ACD8BB100888573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F005E61ACD8BB100888573 /* AuraMovilDoctorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraMovilDoctorTests.swift; sourceTree = "<group>"; };
+		8E136A171B0E416200D3CF4B /* Security.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				16CB6C061ACE451100E35659 /* SearchController.swift */,
 				16CB6C081ACE455700E35659 /* EpisodeDetailViewController.swift */,
 				16CB6BFA1ACE3D0900E35659 /* PatientViewController.swift */,
+				8E136A171B0E416200D3CF4B /* Security.swift */,
 				16CB6C0A1ACE5D6A00E35659 /* ShowSymptomController.swift */,
 				16CB6C0C1ACE5D9E00E35659 /* ShowSportsController.swift */,
 				16CB6C0E1ACE5DBF00E35659 /* ShowFoodController.swift */,
@@ -276,6 +279,7 @@
 				16CB6C071ACE451100E35659 /* SearchController.swift in Sources */,
 				16CB6BF51ACDE1CF00E35659 /* Doctor.swift in Sources */,
 				16CB6C0B1ACE5D6A00E35659 /* ShowSymptomController.swift in Sources */,
+				8E136A181B0E416200D3CF4B /* Security.swift in Sources */,
 				16CB6C031ACE3F0B00E35659 /* Medicine.swift in Sources */,
 				16CB6C0D1ACE5D9E00E35659 /* ShowSportsController.swift in Sources */,
 				16CB6BF31ACDDEE100E35659 /* DoctorViewController.swift in Sources */,
