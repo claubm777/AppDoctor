@@ -53,7 +53,7 @@ class ShowSymptomController: UIViewController {
                         let label = symtomsLabel[index]
                         let symptom = symptoms[index]
                         
-                        label.text = symptom.symptom.description
+                        label.text = symptom.symptom
                     }
                     else
                     {
